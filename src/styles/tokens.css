@@ -1,0 +1,15 @@
+:root {
+  --ink: #171717;
+  --paper: #fafaf8;
+  --red: #a52b32;
+  --brown: #554039;
+  --neutral: #eee9e4;
+  --muted: #777573;
+  --ink-soft: #3f3c39;
+  --paper-soft: #d4cfc8;
+  --line: rgba(23, 23, 23, 0.14);
+  --line-light: rgba(250, 250, 248, 0.28);
+  --frame: clamp(0.75rem, 1.5vw, 1.25rem);
+  --header: 4.25rem;
+  --booking-bar: calc(4.25rem + env(safe-area-inset-bottom));
+}
