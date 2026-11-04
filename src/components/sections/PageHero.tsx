@@ -1,4 +1,4 @@
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, Rule } from "@/components/ui/Reveal";
 
 export function PageHero({
   eyebrow,
@@ -20,6 +20,7 @@ export function PageHero({
             {title}
           </h1>
           {lede ? <p className="measure mt-6 text-lg text-ink-soft">{lede}</p> : null}
+          <Rule />
         </Reveal>
       </div>
     </header>

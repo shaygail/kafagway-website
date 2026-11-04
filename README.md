@@ -60,11 +60,10 @@ Files:
 - `public/images/service-implant.webp`
 - `public/images/service-cosmetic.webp`
 - `public/images/patient-experience.webp`
-- `public/images/kafagway-logo.svg`
 
 `service-implant.webp` is only a filename reserved by the brief. Implant treatment is **not** published on the current website, so the file is used as a neutral frame beside root canal treatment. Do not label it as implants unless the clinic confirms that service. Regenerate the abstract frames with `npm run placeholders` if you need the originals back.
 
-The logo is a monogram, not the clinic’s existing mark. Replace `kafagway-logo.svg` when the real logo is supplied. It is drawn in black and inverted on the dark hero.
+The header and footer use the clinic’s supplied mark at `public/images/kafagway-logo.png`. The file arrived as a full lockup on a black field. The word “KAFAGWAY” in that file is black, so it disappears on the background. The site uses the circular red-and-tooth emblem only, with the name set in type beside it. Do not invert the PNG. Swap the file and the `logo` entry in `src/content/assets.ts` if a version with a readable wordmark is supplied.
 
 ## Enquiry form
 
@@ -138,7 +137,7 @@ Two lines from the current service copy were kept as the clinic’s own wording,
 
 - Colours in `src/styles/tokens.css` are proposed: black `#171717`, paper `#FAFAF8`, red `#A52B32`, brown `#554039`, neutral `#EEE9E4`, muted `#777573`. They are not confirmed brand hex values.
 - The current website’s `<title>` is “Kafagwa Dental Center” (missing a y). The visible name and schema say “Kafagway”. This site uses Kafagway.
-- Logo and all photography are placeholders.
+- Photography is still placeholder. The circular emblem is from the supplied logo file. A lockup with a readable wordmark has not been supplied. The name beside the emblem is set in the site typeface.
 
 **Still to connect**
 

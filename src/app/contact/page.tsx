@@ -1,4 +1,5 @@
 import { Hours } from "@/components/ui/Hours";
+import { Reveal } from "@/components/ui/Reveal";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { EnquiryForm } from "@/components/sections/EnquiryForm";
 import { PageHero } from "@/components/sections/PageHero";
@@ -19,7 +20,7 @@ export default function ContactPage() {
       <PageHero id="contact-heading" eyebrow={contactCopy.eyebrow} title={contactCopy.headline} lede={contactCopy.lede} />
       <section className="py-[clamp(3.5rem,8vw,6rem)]">
         <div className="shell grid gap-16 lg:grid-cols-12">
-          <div className="lg:col-span-5">
+          <Reveal from="left" className="lg:col-span-5">
             <a className="font-display text-4xl tracking-[-0.04em] sm:text-5xl" href={`tel:${clinic.phone.tel}`}>
               {clinic.phone.display}
             </a>
@@ -54,13 +55,13 @@ export default function ContactPage() {
               <Hours />
             </div>
             <p className="mt-6 max-w-md text-sm text-brown">{clinic.parkingNote}</p>
-          </div>
-          <div className="lg:col-span-6 lg:col-start-7">
+          </Reveal>
+          <Reveal from="right" delay={0.08} className="lg:col-span-6 lg:col-start-7">
             <h2 className="font-display text-3xl tracking-[-0.03em]">{contactCopy.formTitle}</h2>
             <div className="mt-6">
               <EnquiryForm />
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
       <section className="border-t border-ink/10 py-[clamp(3.5rem,8vw,6rem)]" aria-labelledby="faq-heading">
@@ -69,11 +70,11 @@ export default function ContactPage() {
             Practical questions
           </h2>
           <dl className="lg:col-span-7 lg:col-start-6">
-            {faqs.map((item) => (
-              <div key={item.question} className="border-t border-ink/10 py-6">
+            {faqs.map((item, index) => (
+              <Reveal key={item.question} delay={index * 0.05} className="border-t border-ink/10 py-6">
                 <dt className="font-display text-2xl tracking-[-0.03em]">{item.question}</dt>
                 <dd className="mt-3 max-w-xl text-ink-soft">{item.answer}</dd>
-              </div>
+              </Reveal>
             ))}
           </dl>
         </div>

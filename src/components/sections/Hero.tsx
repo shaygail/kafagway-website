@@ -16,6 +16,7 @@ export function Hero() {
                 image="heroDental"
                 priority
                 parallax
+                entrance={false}
                 fill
                 className="media-zoom top-3 right-3 bottom-3 left-3 border border-white/35 sm:top-4 sm:right-4 sm:bottom-4 sm:left-4 lg:top-24 lg:right-8 lg:bottom-8 lg:left-8"
                 sizes="(min-width: 1024px) 40vw, 100vw"

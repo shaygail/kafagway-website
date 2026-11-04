@@ -1,4 +1,5 @@
 import { ArrowButton } from "@/components/ui/ArrowButton";
+import { Reveal } from "@/components/ui/Reveal";
 import { FutureBooking } from "@/components/sections/FutureBooking";
 import { PageHero } from "@/components/sections/PageHero";
 import { clinic } from "@/content/clinic";
@@ -18,12 +19,16 @@ export default function BookingPage() {
       <PageHero id="booking-heading" eyebrow={bookingCopy.eyebrow} title={bookingCopy.headline} lede={bookingCopy.lede} />
       <section className="py-[clamp(3.5rem,8vw,6rem)]">
         <div className="shell grid gap-8 lg:grid-cols-2">
-          <ArrowButton href={clinic.bookingUrl} variant="red" external className="justify-between">
-            {bookingCopy.primary}
-          </ArrowButton>
-          <ArrowButton href={`tel:${clinic.phone.tel}`} variant="ink" className="justify-between">
-            {bookingCopy.secondary}
-          </ArrowButton>
+          <Reveal>
+            <ArrowButton href={clinic.bookingUrl} variant="red" external className="w-full justify-between">
+              {bookingCopy.primary}
+            </ArrowButton>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <ArrowButton href={`tel:${clinic.phone.tel}`} variant="ink" className="w-full justify-between">
+              {bookingCopy.secondary}
+            </ArrowButton>
+          </Reveal>
         </div>
         <p className="shell mt-8 text-ink-soft">
           {bookingCopy.emailLabel}:{" "}

@@ -1,6 +1,6 @@
 import { ArrowButton } from "@/components/ui/ArrowButton";
 import { MediaFrame } from "@/components/ui/MediaFrame";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, Rule } from "@/components/ui/Reveal";
 import { PageHero } from "@/components/sections/PageHero";
 import { aboutCopy, gallery, homeCopy, team } from "@/content/copy";
 import { createMetadata } from "@/lib/metadata";
@@ -18,14 +18,17 @@ export default function AboutPage() {
       <PageHero id="about-heading" eyebrow={aboutCopy.eyebrow} title={aboutCopy.headline} lede={aboutCopy.lede} />
       <section className="py-[clamp(4rem,8vw,7rem)]" aria-labelledby="philosophy-heading">
         <div className="shell grid gap-10 lg:grid-cols-12">
-          <h2 id="philosophy-heading" className="display-md lg:col-span-5">
-            {aboutCopy.philosophyTitle}
-          </h2>
-          <div className="space-y-6 text-ink-soft lg:col-span-6 lg:col-start-7">
+          <Reveal from="left" className="lg:col-span-5">
+            <h2 id="philosophy-heading" className="display-md">
+              {aboutCopy.philosophyTitle}
+            </h2>
+            <Rule />
+          </Reveal>
+          <Reveal from="right" delay={0.1} className="space-y-6 text-ink-soft lg:col-span-6 lg:col-start-7">
             {aboutCopy.philosophy.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
       <section className="bg-neutral py-[clamp(4rem,8vw,7rem)]" aria-labelledby="rooms-heading">
@@ -53,12 +56,14 @@ export default function AboutPage() {
           </h2>
           <p className="measure mt-5 text-ink-soft">{aboutCopy.teamBody}</p>
           <ul className="mt-12 divide-y divide-ink/10 border-y border-ink/10">
-            {team.map((person) => (
-              <li key={person.name} className="grid gap-3 py-8 md:grid-cols-12">
-                <h3 className="font-display text-2xl tracking-[-0.03em] md:col-span-6">{person.name}</h3>
-                <p className="text-ink-soft md:col-span-6">
-                  {person.qualifications || person.bio || aboutCopy.teamEmpty}
-                </p>
+            {team.map((person, index) => (
+              <li key={person.name}>
+                <Reveal delay={index * 0.06} className="grid gap-3 py-8 md:grid-cols-12">
+                  <h3 className="font-display text-2xl tracking-[-0.03em] md:col-span-6">{person.name}</h3>
+                  <p className="text-ink-soft md:col-span-6">
+                    {person.qualifications || person.bio || aboutCopy.teamEmpty}
+                  </p>
+                </Reveal>
               </li>
             ))}
           </ul>

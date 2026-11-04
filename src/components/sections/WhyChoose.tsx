@@ -1,4 +1,4 @@
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, Rule } from "@/components/ui/Reveal";
 import { homeCopy } from "@/content/copy";
 
 export function WhyChoose() {
@@ -11,6 +11,7 @@ export function WhyChoose() {
           <h2 id="why-heading" className="display-md mt-5 max-w-[16ch]">
             {copy.headline}
           </h2>
+          <Rule />
         </Reveal>
         <div className="mt-14 grid gap-px bg-ink/10 md:grid-cols-3">
           {copy.pillars.map((pillar, index) => (

@@ -79,12 +79,16 @@ export const assets = {
     height: 1200,
     placeholder: true,
   },
+  /**
+   * Circular emblem from the clinic’s supplied logo. The wordmark in that file is black
+   * on a black field, so the name is set in type beside this mark. Do not CSS-invert it.
+   */
   logo: {
-    src: "/images/kafagway-logo.svg",
+    src: "/images/kafagway-logo.png",
     alt: "",
-    width: 64,
-    height: 64,
-    placeholder: true,
+    width: 698,
+    height: 699,
+    placeholder: false,
   },
 } as const satisfies Record<string, Asset>;
 

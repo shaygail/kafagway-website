@@ -1,5 +1,5 @@
 import { MediaFrame } from "@/components/ui/MediaFrame";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, Rule } from "@/components/ui/Reveal";
 import { homeCopy } from "@/content/copy";
 
 export function Journey() {
@@ -14,6 +14,7 @@ export function Journey() {
               {copy.headline}
             </h2>
             <p className="mt-5 max-w-sm text-sm text-brown">{copy.note}</p>
+            <Rule />
           </Reveal>
           <MediaFrame
             image="patientExperience"

@@ -14,10 +14,9 @@ export function Logo({ inverse = false }: { inverse?: boolean }) {
       <Image
         src={assets.logo.src}
         alt=""
-        width={36}
-        height={36}
-        unoptimized
-        className={cn("h-9 w-9", inverse && "invert")}
+        width={assets.logo.width}
+        height={assets.logo.height}
+        className="h-12 w-12"
       />
       <span className="leading-none">
         <span className="block font-display text-[0.95rem] tracking-[0.16em]">KAFAGWAY</span>

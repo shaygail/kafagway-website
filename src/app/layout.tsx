@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { HeaderSpacer } from "@/components/layout/HeaderSpacer";
 import { MenuProvider } from "@/components/layout/MenuContext";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${geist.variable} ${sourceSans.variable} h-full antialiased`}>
       <body className="min-h-full bg-paper text-ink">
         <MenuProvider>
+          <ScrollProgress />
           <a className="skip" href="#content">
             Skip to content
           </a>

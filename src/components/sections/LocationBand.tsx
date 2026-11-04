@@ -35,7 +35,12 @@ export function LocationBand() {
           </div>
           <p className="mt-6 max-w-md text-sm text-brown">{clinic.parkingNote}</p>
         </Reveal>
-        <MediaFrame image="clinicInterior" className="aspect-[4/5] min-h-[22rem]" sizes="(min-width: 1024px) 46vw, 100vw" />
+        <MediaFrame
+          image="clinicInterior"
+          parallax
+          className="aspect-[4/5] min-h-[22rem]"
+          sizes="(min-width: 1024px) 46vw, 100vw"
+        />
       </div>
     </section>
   );
