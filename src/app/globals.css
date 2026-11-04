@@ -1,0 +1,133 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-red: var(--red);
+  --color-brown: var(--brown);
+  --color-neutral: var(--neutral);
+  --color-muted: var(--muted);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper-soft: var(--paper-soft);
+  --font-sans: var(--font-source), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  color-scheme: light;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--red);
+  color: var(--paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+.shell {
+  width: min(90rem, calc(100% - clamp(1.25rem, 5vw, 4.5rem) * 2));
+  margin-inline: auto;
+}
+
+.display {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+  font-size: clamp(2.65rem, 4.4vw + 1.15rem, 7.1rem);
+}
+
+.display-md {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.94;
+  font-size: clamp(2.35rem, 2.4vw + 1.2rem, 4.6rem);
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.measure {
+  max-width: 38rem;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -5rem;
+  z-index: 80;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 0.6rem 1rem;
+}
+
+.skip:focus {
+  top: 1rem;
+}
+
+.field {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(23, 23, 23, 0.28);
+  border-radius: 0;
+  background: transparent;
+  padding: 0.85rem 0;
+  color: var(--ink);
+  font: inherit;
+}
+
+.field::placeholder {
+  color: var(--brown);
+}
+
+textarea.field {
+  min-height: 8.5rem;
+  resize: vertical;
+}
+
+@media (hover: hover) {
+  .media-zoom img {
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .media-zoom:hover img {
+    transform: scale(1.045);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
